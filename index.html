@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Marko Dufala</title>
+  </head>
+  <body>
+    <section id="screen1">
+      <div class="wrapper2">
+        <div class="typing-demo">
+          Marko Dufala
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li class="strikeout"><a href="#screen1">Home</a></li>
+          <li><a href="#screen2">About</a></li>
+          <li><a href="#screen3">Contact</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section id="screen2">
+      <h1>About me</h1>
+      <hr class="dark mb-5" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis
+        eius recusandae id eveniet quaerat iste possimus facere dolor
+        dignissimos suscipit. Distinctio harum sit, numquam praesentium, quos
+        itaque, aliquam adipisci beatae impedit tenetur id blanditiis sunt enim
+        perspiciatis alias nostrum deleniti veritatis. Aliquam eos nisi
+        molestiae maxime libero sint, magni ratione!
+      </p>
+    </section>
+    <section id="screen3">
+      <h1>Contact</h1>
+      <hr class="dark mb-5" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis
+        eius recusandae id eveniet quaerat iste possimus facere dolor
+        dignissimos suscipit. Distinctio harum sit, numquam praesentium, quos
+        itaque, aliquam adipisci beatae impedit tenetur id blanditiis sunt enim
+        perspiciatis alias nostrum deleniti veritatis. Aliquam eos nisi
+        molestiae maxime libero sint, magni ratione!
+      </p>
+    </section>
+
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $(window).bind("scroll", function () {
+          var navHeight = $(window).height() - 70;
+          if ($(window).scrollTop() > navHeight) {
+            $("nav").addClass("fixed");
+          } else {
+            $("nav").removeClass("fixed");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

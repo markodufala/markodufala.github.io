@@ -1,0 +1,189 @@
+/*
+Tutorial Name: Scroll To Top Then Fixed Navigation Effect With JQuery and CSS
+Description: Create a sticky navigation bar that remains fixed to the top after scroll
+Author: Stanislav Kostadinov
+Author URI: http://stanislav.it
+Version: 1.0.0 - 11.01.2014
+*/
+
+$section1: #f2f2f2;
+/*$section1: #5cc7d6; */
+$section2: #f2c8c4;
+$section4: #f28e85;
+$section3: #f24c3d;
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #ccc;
+  z-index: 1;
+  text-transform: uppercase;
+}
+
+a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 0.08em;
+  left: 50%;
+  position: absolute;
+  background: darken($color: $section3, $amount: 10);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after {
+  width: 100%;
+  left: 0;
+}
+/* This class is added on scroll */
+.fixed {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  z-index: 1;
+}
+
+body {
+  color: $section3;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Font Face Settings */
+@font-face {
+  font-family: "open-sans-bold";
+  src: url("../fonts/open-sans/OpenSans-Bold.eot");
+  src: url("../fonts/open-sans/OpenSans-Bold.eot?iefix")
+      format("embedded-opentype"),
+    url("../fonts/open-sans/OpenSans-Bold.ttf");
+  font-weight: normal;
+}
+
+.wrapper2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4em;
+  line-height: normal;
+  padding-top: 40vh;
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+}
+
+.typing-demo {
+  width: 12ch;
+  animation: typing 1.5s steps(20, end), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-weight: 800;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Navigation Settings */
+nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background: $section1;
+}
+
+nav li {
+  display: inline-block;
+  padding: 24px 10px;
+}
+
+nav li a {
+  color: $section3;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+section {
+  height: 100vh;
+}
+
+h1 {
+  padding-top: 10vh;
+  font-size: 3em;
+  font-weight: 300px;
+}
+
+hr.light {
+  border-color: #fff;
+}
+hr.light,
+hr.dark {
+  max-width: 17em;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-top: solid 0.14em;
+  margin-top: -0.2em;
+  margin-bottom: 2.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Screens Settings */
+#screen1 {
+  background: $section1;
+}
+
+#screen2 p {
+  max-width: 600px;
+  display: inline-block;
+}
+
+#screen2 {
+  background-color: $section2;
+}
+#screen3 {
+  background-color: $section3;
+  color: $section2;
+}
+#screen3 p {
+  max-width: 600px;
+  display: inline-block;
+}
+#screen4 {
+  background: $section4;
+}
+
+#screen h1 {
+  color: $section2;
+}
+
+@media only screen and (max-width: 520px) {
+  nav li {
+    padding: 24px 4px;
+  }
+
+  nav li a {
+    font-size: 14px;
+  }
+}
