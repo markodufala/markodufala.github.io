@@ -74,8 +74,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4em;
-  line-height: normal;
+  font-size: 6vw;
   padding-top: 40vh;
   padding-left: 0.8em;
   padding-right: 0.8em;
@@ -164,7 +163,7 @@ hr.dark {
 }
 #screen3 {
   background-color: $section3;
-  color: $section2;
+  color: $section1;
 }
 #screen3 p {
   max-width: 600px;
