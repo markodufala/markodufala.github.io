@@ -1,10 +1,19 @@
-
+/*
+Tutorial Name: Scroll To Top Then Fixed Navigation Effect With JQuery and CSS
+Description: Create a sticky navigation bar that remains fixed to the top after scroll
+Author: Stanislav Kostadinov
+Author URI: http://stanislav.it
+Version: 1.0.0 - 11.01.2014
+*/
+/*$section1: #5cc7d6; */
 html {
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 a {
   display: inline-block;
@@ -12,7 +21,8 @@ a {
   text-decoration: none;
   color: #ccc;
   z-index: 1;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 a:after {
   background: none repeat scroll 0 0 transparent;
@@ -24,31 +34,38 @@ a:after {
   position: absolute;
   background: #ec2210;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0; }
+  width: 0;
+}
 
 a:hover:after {
   width: 100%;
-  left: 0; }
+  left: 0;
+}
 
 /* This class is added on scroll */
 .fixed {
   position: fixed;
   top: 0;
   height: 70px;
-  z-index: 1; }
+  z-index: 1;
+}
 
 body {
   color: #f24c3d;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 18px;
-  text-align: center; }
+  text-align: center;
+}
 
 /* Font Face Settings */
 @font-face {
   font-family: "open-sans-bold";
   src: url("../fonts/open-sans/OpenSans-Bold.eot");
-  src: url("../fonts/open-sans/OpenSans-Bold.eot?iefix") format("embedded-opentype"), url("../fonts/open-sans/OpenSans-Bold.ttf");
-  font-weight: normal; }
+  src: url("../fonts/open-sans/OpenSans-Bold.eot?iefix")
+      format("embedded-opentype"),
+    url("../fonts/open-sans/OpenSans-Bold.ttf");
+  font-weight: normal;
+}
 .wrapper2 {
   display: flex;
   align-items: center;
@@ -56,7 +73,8 @@ body {
   font-size: 6vw;
   padding-top: 40vh;
   padding-left: 0.8em;
-  padding-right: 0.8em; }
+  padding-right: 0.8em;
+}
 
 .typing-demo {
   width: 12ch;
@@ -65,41 +83,52 @@ body {
   overflow: hidden;
   border-right: 3px solid;
   font-weight: 800;
-  font-size: 2em; }
+  font-size: 2em;
+}
 
 @keyframes typing {
   from {
-    width: 0; } }
+    width: 0;
+  }
+}
 @keyframes blink {
   50% {
-    border-color: transparent; } }
+    border-color: transparent;
+  }
+}
 /* Navigation Settings */
 nav {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 70px;
-  background: #f2f2f2; }
+  background: #f2f2f2;
+}
 
 nav li {
   display: inline-block;
-  padding: 24px 10px; }
+  padding: 24px 10px;
+}
 
 nav li a {
   color: #f24c3d;
   text-transform: uppercase;
-  font-size: 1.5em; }
+  font-size: 1.5em;
+}
 
 section {
-  height: 100vh; }
+  height: 100vh;
+}
 
 h1 {
   padding-top: 10vh;
-  font-size: 3em;
-  font-weight: 300px; }
+  font-size: 5em;
+  font-weight: 300px;
+}
 
 hr.light {
-  border-color: #fff; }
+  border-color: #fff;
+}
 
 hr.light,
 hr.dark {
@@ -111,38 +140,66 @@ hr.dark {
   margin-top: -0.2em;
   margin-bottom: 2.5em;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+}
+
+/* image of melon*/
+img {
+  position: absolute;
+  left: 43%;
+  top: 40px;
+  max-width: 20%;
+  height: auto;
+
+  transition: all 0.3s ease-in-out 0s;
+}
+img:hover,
+img:focus {
+  cursor: default;
+  transform: rotate(360deg);
+  transition: all 0.6s ease-in-out 0s;
+}
 
 /* Screens Settings */
 #screen1 {
-  background: #f2f2f2; }
+  background: #f2f2f2;
+}
 
 #screen2 p {
   max-width: 600px;
-  display: inline-block; }
+  display: inline-block;
+}
 
 #screen2 {
-  background-color: #f2c8c4; }
+  background-color: #f2c8c4;
+}
 
 #screen3 {
   background-color: #f24c3d;
-  color: #f2f2f2; }
+  color: #f2f2f2;
+}
 
 #screen3 p {
   max-width: 600px;
-  display: inline-block; }
+  display: inline-block;
+}
 
 #screen4 {
-  background: #f28e85; }
+  background: #f28e85;
+}
 
 #screen h1 {
-  color: #f2c8c4; }
+  color: #f2c8c4;
+}
 
 @media only screen and (max-width: 520px) {
   nav li {
-    padding: 24px 4px; }
+    padding: 24px 4px;
+  }
 
   nav li a {
-    font-size: 14px; } }
+    font-size: 14px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
