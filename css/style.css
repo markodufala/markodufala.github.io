@@ -15,6 +15,8 @@ html {
   padding: 0;
 }
 
+
+
 a {
   display: inline-block;
   position: relative;
@@ -33,7 +35,7 @@ a:after {
   height: 0.08em;
   left: 50%;
   position: absolute;
-  background: #ec2210;
+  background: #555;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -52,7 +54,6 @@ a:hover:after {
 }
 
 body {
-  color: #f24c3d;
   font-family: "Lato", sans-serif;
   font-size: 18px;
   text-align: center;
@@ -158,6 +159,9 @@ img:focus {
 /* Screens Settings */
 #screen1 {
   background: #f2f2f2;
+
+  transition: all 2.15 ease-out;
+
 }
 
 #screen2 p {
@@ -167,11 +171,17 @@ img:focus {
 
 #screen2 {
   background-color: #f2c8c4;
+
+  transition: all 2.15 ease-out;
+
 }
 
 #screen3 {
   background-color: #f24c3d;
   color: #f2f2f2;
+
+  transition: all 2.15 ease-out;
+
 }
 
 #screen3 p {
