@@ -1,216 +1,145 @@
-/*
-Tutorial Name: Scroll To Top Then Fixed Navigation Effect With JQuery and CSS
-Description: Create a sticky navigation bar that remains fixed to the top after scroll
-Author: Stanislav Kostadinov
-Author URI: http://stanislav.it
-Version: 1.0.0 - 11.01.2014
-*/
-/*$section1: #5cc7d6; */
-html {
-  scroll-behavior: smooth;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Marko Dufala</title>
+  </head>
+  <body>
+    <section id="screen1">
+      <div class="wrapper2">
+        <div class="typing-demo">
+          Marko Dufala
+        </div>
+      </div>
 
-* {
-  margin: 0;
-  padding: 0;
-}
+      <nav class="navbar">
+        <ul>
+          <li class="strikeout"><a href="#screen1">Home</a></li>
+          <li><a href="#screen2" class="about">About</a></li>
+          <li><a href="#screen3" class="contact">Contact</a></li>
+        </ul>
+      </nav>
+      <img src="img/melon.png" alt="watermelon" class="melon" />
+    </section>
+
+    <section id="screen2">
+      <h1>About me</h1>
+      <hr class="dark mb-5" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis
+        eius recusandae id eveniet quaerat iste possimus facere dolor
+        dignissimos suscipit. Distinctio harum sit, numquam praesentium, quos
+        itaque, aliquam adipisci beatae impedit tenetur id blanditiis sunt enim
+        perspiciatis alias nostrum deleniti veritatis. Aliquam eos nisi
+        molestiae maxime libero sint, magni ratione!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis
+        eius recusandae id eveniet quaerat iste possimus facere dolor
+        dignissimos suscipit. Distinctio harum sit, numquam praesentium, quos
+        itaque, aliquam adipisci beatae impedit tenetur id blanditiis sunt enim
+        perspiciatis alias nostrum deleniti veritatis. Aliquam eos nisi
+        molestiae maxime libero sint, magni ratione!
+      </p>
+    </section>
+    <section id="screen3">
+      <h1>Contact</h1>
+      <hr class="dark mb-5" />
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis
+        eius recusandae id eveniet quaerat iste possimus facere dolor
+        dignissimos suscipit. Distinctio harum sit, numquam praesentium, quos
+        itaque, aliquam adipisci beatae impedit tenetur id blanditiis sunt enim
+        perspiciatis alias nostrum deleniti veritatis. Aliquam eos nisi
+        molestiae maxime libero sint, magni ratione!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis
+        eius recusandae id eveniet quaerat iste possimus facere dolor
+        dignissimos suscipit. Distinctio harum sit, numquam praesentium, quos
+        itaque, aliquam adipisci beatae impedit tenetur id blanditiis sunt enim
+        perspiciatis alias nostrum deleniti veritatis. Aliquam eos nisi
+        molestiae maxime libero sint, magni ratione!
+      </p>
+    </section>
+
+    <footer>
+      created with no words.
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+    ></script>
+
+    <script>
+      $(document).ready(function () {
+        $(window).bind("scroll", function () {
+          var navHeight = $(window).height() - 70;
+          if ($(window).scrollTop() > navHeight) {
+            $("nav").addClass("fixed");
+          } else {
+            $("nav").removeClass("fixed");
+          }
+        });
+      });
+    </script>
+
+<script type="text/javascript">
+  var colorOne = ["#f2f2f2", "#33D4CD", "#282b29" ];
+  var colorOneText = ["#f24c3d", "#ebeded", "#a6d1c9"]
+  
+  var colorTwo = ["#f2c8c4", "#1ABBB4", "#5B5E5C" ];
+  var colorTwoText = ["#f24c3d", "#f7f7f7", "#c8e3de"]
+
+
+  var colorThree = ["#f24c3d", "#00A19A", "#8E918F" ];
+  var colorThreeText = ["#f24c3d", "#fafafa", "#dfedeb"]
+
+  var i = 0;
+  document.querySelector("body").addEventListener("click", 
+  function(){
+    i = i < colorOne.length ? ++i : 0;
+    document.querySelector("#screen1").style.background = colorOne [i] 
+
+    document.querySelector("#screen1").style.color = colorOneText [i]
+    document.querySelector("nav li a").style.color = colorOneText [i]
+    document.querySelector(".about ").style.color = colorOneText [i]
+    document.querySelector(".contact").style.color = colorOneText [i]
+
+    document.querySelector("#screen2").style.background = colorTwo [i]
+    document.querySelector("#screen2").style.color = colorTwoText [i]
+
+
+    document.querySelector("footer").style.background = colorThree [i]
+    document.querySelector("#screen3").style.color = colorThreeText [i]
 
 
 
-a {
-  display: inline-block;
-  position: relative;
-  text-decoration: none;
-  color: #ccc;
-  z-index: 1;
-  text-transform: uppercase;
-  font-family: "Open Sans", sans-serif;
-}
+    document.querySelector("#screen3").style.background = colorThree [i] 
 
-a:after {
-  background: none repeat scroll 0 0 transparent;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 0.08em;
-  left: 50%;
-  position: absolute;
-  background: #555;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
 
-a:hover:after {
-  width: 100%;
-  left: 0;
-}
 
-/* This class is added on scroll */
-.fixed {
-  position: fixed;
-  top: 0;
-  height: 70px;
-  z-index: 1;
-}
+    
+    
+    document.querySelector("nav").style.background = colorOne [i]
+    document.querySelector("nav li a:after").style.background = colorOne [i]
 
-body {
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  text-align: center;
-}
+     
 
-.wrapper2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 6vw;
-  padding-top: 40vh;
-  padding-left: 0.8em;
-  padding-right: 0.8em;
-}
+    
 
-.typing-demo {
-  width: 12ch;
-  animation: typing 1.5s steps(20, end), blink 0.5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-weight: 800;
-  font-size: 2em;
-}
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-/* Navigation Settings */
-nav {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 70px;
-  background: #f2f2f2;
-}
 
-nav li {
-  display: inline-block;
-  padding: 24px 10px;
-}
+  })
+  </script>
 
-nav li a {
-  color: #f24c3d;
-  text-transform: uppercase;
-  font-size: 1.5em;
-}
-
-section {
-  height: 100vh;
-}
-
-section p {
-  font-family: "Open Sans", sans-serif;
-}
-h1 {
-  padding-top: 10vh;
-  font-size: 3em;
-  font-weight: 300px;
-}
-
-hr.light {
-  border-color: #fff;
-}
-
-hr.light,
-hr.dark {
-  max-width: 17em;
-  padding: 0;
-  text-align: center;
-  border: none;
-  border-top: solid 0.14em;
-  margin-top: -0.2em;
-  margin-bottom: 2.5em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* image of melon*/
-img {
-  position: absolute;
-  left: 43%;
-  top: 40px;
-  max-width: 20%;
-  height: auto;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-img:hover,
-img:focus {
-  cursor: default;
-  transform: rotate(360deg);
-  transition: all 0.6s ease-in-out 0s;
-}
-
-/* Screens Settings */
-#screen1 {
-  background: #f2f2f2;
-
-  transition: all 2.15 ease-out;
-
-}
-
-#screen2 p {
-  max-width: 600px;
-  display: inline-block;
-}
-
-#screen2 {
-  background-color: #f2c8c4;
-
-  transition: all 2.15 ease-out;
-
-}
-
-#screen3 {
-  background-color: #f24c3d;
-  color: #f2f2f2;
-
-  transition: all 2.15 ease-out;
-
-}
-
-#screen3 p {
-  max-width: 600px;
-  display: inline-block;
-}
-
-#screen4 {
-  background: #f28e85;
-}
-
-#screen h1 {
-  color: #f2c8c4;
-}
-
-footer {
-  background: #f03625;
-  color: white;
-  font-weight: 200;
-}
-
-@media only screen and (max-width: 520px) {
-  nav li {
-    padding: 24px 4px;
-  }
-
-  nav li a {
-    font-size: 14px;
-  }
-}
-
-/*# sourceMappingURL=style.css.map */
+  </body>
+</html>
