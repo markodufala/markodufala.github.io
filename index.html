@@ -19,14 +19,14 @@
         </div>
       </div>
 
-      <nav>
+      <nav class="navbar">
         <ul>
           <li class="strikeout"><a href="#screen1">Home</a></li>
-          <li><a href="#screen2">About</a></li>
-          <li><a href="#screen3">Contact</a></li>
+          <li><a href="#screen2" class="about">About</a></li>
+          <li><a href="#screen3" class="contact">Contact</a></li>
         </ul>
       </nav>
-      <img src="img/melon.png" alt="watermelon" />
+      <img src="img/melon.png" alt="watermelon" class="melon" />
     </section>
 
     <section id="screen2">
@@ -91,5 +91,44 @@
         });
       });
     </script>
+
+<script type="text/javascript">
+  var colorOne = ["#f2f2f2", "#33D4CD", "#282b29" ];
+  var colorOneText = ["#f24c3d", "#ebeded", "#a6d1c9"]
+  
+  var colorTwo = ["#f2c8c4", "#1ABBB4", "#5B5E5C" ];
+  var colorTwoText = ["#f24c3d", "#f7f7f7", "#c8e3de"]
+
+
+  var colorThree = ["#f24c3d", "#00A19A", "#8E918F" ];
+  var colorThreeText = ["#f24c3d", "#fafafa", "#dfedeb"]
+
+  var i = 0;
+  document.querySelector("body").addEventListener("click", 
+  function(){
+    i = i < colorOne.length ? ++i : 0;
+    document.querySelector("#screen1").style.background = colorOne [i] 
+
+    document.querySelector("#screen1").style.color = colorOneText [i]
+    document.querySelector("nav li a").style.color = colorOneText [i]
+    document.querySelector(".about ").style.color = colorOneText [i]
+    document.querySelector(".contact").style.color = colorOneText [i]
+
+    document.querySelector("#screen2").style.background = colorTwo [i]
+    document.querySelector("#screen2").style.color = colorTwoText [i]
+
+
+    document.querySelector("footer").style.background = colorThree [i]
+    document.querySelector("#screen3").style.color = colorThreeText [i]
+
+    document.querySelector("#screen3").style.background = colorThree [i] 
+   
+    document.querySelector("nav").style.background = colorOne [i]
+    document.querySelector("nav li a:after").style.background = colorOne [i]
+
+ 
+  })
+  </script>
+
   </body>
 </html>
