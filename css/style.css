@@ -53,7 +53,6 @@ a:hover:after {
   z-index: 1;
 }
 
-
 body {
   color: #f24c3d;
   font-family: "Lato", sans-serif;
@@ -200,7 +199,7 @@ img:focus {
 }
 
 footer {
-  background: #f03625;
+  background: #f24c3d;
   color: white;
   font-weight: 200;
 }
